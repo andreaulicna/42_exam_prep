@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SpellBook.hpp                                      :+:      :+:    :+:   */
+/*   TargetGenerator.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/08 17:37:47 by aulicna           #+#    #+#             */
-/*   Updated: 2024/08/16 12:31:25 by aulicna          ###   ########.fr       */
+/*   Created: 2024/08/16 12:10:21 by aulicna           #+#    #+#             */
+/*   Updated: 2024/08/16 12:31:13 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPELLBOOK_HPP
-# define SPELLBOOK_HPP
+#ifndef TARGETGENERATOR_HPP
+# define TARGETGENERATOR_HPP
 
 # include <iostream>
 # include <vector>
-# include "ASpell.hpp"
+# include "ATarget.hpp"
 
-class SpellBook
+class ATarget;
+
+class TargetGenerator
 {
 	public:
-		SpellBook(void);
-		~SpellBook(void);
+		TargetGenerator(void);
+		~TargetGenerator(void);
 
-		void	learnSpell(ASpell *spellToLearn);
-		void	forgetSpell(std::string const &spellToForget);
-		ASpell	*createSpell(std::string const &spellToCreate);
+		void learnTargetType(ATarget* targetToLearn);
+		void forgetTargetType(std::string const &targetToForget);
+		ATarget* createTarget(std::string const &targetToCreate);
 
 	private:
-		SpellBook(const SpellBook& copy);
-		SpellBook	&operator=(const SpellBook &src);
+		TargetGenerator(const TargetGenerator& copy);
+		TargetGenerator	&operator=(const TargetGenerator &src);
 
-		std::vector<ASpell *>	_book;
+		std::vector<ATarget *>	_book;
 
 };
 

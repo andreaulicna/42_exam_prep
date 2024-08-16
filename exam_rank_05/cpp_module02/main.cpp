@@ -6,9 +6,17 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 16:18:38 by aulicna           #+#    #+#             */
-/*   Updated: 2024/08/08 17:24:47 by aulicna          ###   ########.fr       */
+/*   Updated: 2024/08/16 12:28:59 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Warlock.hpp"
+#include "BrickWall.hpp"
+#include "Polymorph.hpp"
+#include "BrickWall.hpp"
+#include "TargetGenerator.hpp"
+#include "Fireball.hpp"
+#include "ATarget.hpp"
 
 int main()
 {

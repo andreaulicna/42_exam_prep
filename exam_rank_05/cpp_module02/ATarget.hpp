@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 16:27:18 by aulicna           #+#    #+#             */
-/*   Updated: 2024/08/06 17:01:58 by aulicna          ###   ########.fr       */
+/*   Updated: 2024/08/16 12:37:36 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ATarget
 		ATarget(const std::string &type);
 		ATarget(const ATarget& copy);
 		ATarget	&operator=(const ATarget &src);
-		~ATarget(void);
+		virtual ~ATarget(void);
 
 		const std::string &getType(void) const;
 

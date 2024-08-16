@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 14:54:12 by aulicna           #+#    #+#             */
-/*   Updated: 2024/08/06 18:12:21 by aulicna          ###   ########.fr       */
+/*   Updated: 2024/08/16 12:04:48 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <vector>
 # include "ASpell.hpp"
 # include "ATarget.hpp"
+# include "SpellBook.hpp"
 
 class ASpell;
 class ATarget;
@@ -45,7 +46,7 @@ class Warlock
 
 		std::string					_name;
 		std::string					_title;
-		std::vector<ASpell *>	_spells;
+		SpellBook					_book;
 
 };
 

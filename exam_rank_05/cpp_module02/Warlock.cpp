@@ -6,7 +6,7 @@
 /*   By: aulicna <aulicna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 15:01:03 by aulicna           #+#    #+#             */
-/*   Updated: 2024/08/06 18:13:18 by aulicna          ###   ########.fr       */
+/*   Updated: 2024/08/16 12:34:52 by aulicna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,37 +44,46 @@ void	Warlock::introduce(void) const
 
 void	Warlock::learnSpell(ASpell *spellToLearn)
 {
-	for (size_t i = 0; i < this->_spells.size(); i++)
-	{
-		if (this->_spells[i]->getName() == spellToLearn->getName())
-			return ;
-	}
-	this->_spells.push_back(spellToLearn->clone());
-	
+//	for (size_t i = 0; i < this->_spells.size(); i++)
+//	{
+//		if (this->_spells[i]->getName() == spellToLearn->getName())
+//			return ;
+//	}
+//	this->_spells.push_back(spellToLearn->clone());
+	this->_book.learnSpell(spellToLearn);	
 }
 
 void	Warlock::forgetSpell(std::string spellName)
 {
-	for (std::vector<ASpell*>::iterator it = this->_spells.begin(); it != this->_spells.end(); )
-	{
-		if ((*it)->getName() == spellName)
-		{
-			delete *it;
-			it = this->_spells.erase(it);
-		}
-		else
-			it++;
-	}
+//	for (std::vector<ASpell*>::iterator it = this->_spells.begin(); it != this->_spells.end(); )
+//	{
+//		if ((*it)->getName() == spellName)
+//		{
+//			delete *it;
+//			it = this->_spells.erase(it);
+//		}
+//		else
+//			it++;
+//	}
+	this->_book.forgetSpell(spellName);
 }
 
 void	Warlock::launchSpell(std::string spellName, const ATarget &target)
 {
-	for (size_t i = 0; i < this->_spells.size(); i++)
+//	for (size_t i = 0; i < this->_spells.size(); i++)
+//	{
+//		if (this->_spells[i]->getName() == spellName)
+//		{
+//			this->_spells[i]->launch(target);
+//			return ;
+//		}
+//	}
+	ASpell *tmp;
+
+	tmp = this->_book.createSpell(spellName);
+	if (tmp != NULL)
 	{
-		if (this->_spells[i]->getName() == spellName)
-		{
-			this->_spells[i]->launch(target);
-			return ;
-		}
+		(*tmp).launch(target);
+		delete tmp;
 	}
 }
